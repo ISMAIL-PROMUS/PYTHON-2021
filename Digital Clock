@@ -1,0 +1,15 @@
+from tkinter import *
+from time import strftime
+
+root = Tk()
+root.title("Clock")
+def gettime():
+    time = strftime('%H:%M:%S %p')
+    l.config(text=time)
+    l.after(1000,gettime)
+
+l = Label(root, font=('calibri', 40,'bold'), background='orange')
+l.pack()
+gettime()
+
+mainloop()
